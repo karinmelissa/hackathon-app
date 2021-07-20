@@ -1,4 +1,4 @@
-const Sidebar = () => {
+const SidebarAdm = () => {
 
     return (
         <div className="sidebar"> 
@@ -6,10 +6,12 @@ const Sidebar = () => {
             <ul className=" side-list">
                 <li> <a href="/dashboard"> Dashboard </a> </li>
                 <li> <a href="/userprofile"> Perfil de usuario </a> </li>
+                <li> <a href="/create"> Crear un equipo </a> </li>
                 <li> <a href="/search"> Buscar </a> </li>
+                <li> <a href="/adminview"> Añadir nuevo administrador </a> </li>
             </ul>
         </div>
     )
 }
 
-export default Sidebar;
+export default SidebarAdm;
