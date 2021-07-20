@@ -2,6 +2,8 @@ import './style/App.css';
 import Login from './components/Login';
 import SignOut from './components/SignOut';
 import Dashboard from './components/Dashboard';
+import Sidebar from './components/Sidebar';
+import SidebarAdm from './components/SidebarAdm';
 
 import {
   BrowserRouter as Router,
@@ -37,10 +39,12 @@ function App() {
           <Route path='/adminview'>
             <SignOut />
             <AdminProfile/> 
+            <SidebarAdm />
           </Route>
 
           <Route path='/dashboard'>
             <SignOut />
+            <Sidebar />
             <Dashboard /> 
           </Route>
 
@@ -49,10 +53,6 @@ function App() {
             <Login/>
           </Route>
 
-          <Route path='/login'>
-            <SignOut />
-            <Dashboard /> 
-          </Route>
 
         </Switch>
       </Router>
