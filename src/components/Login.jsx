@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { auth } from '../firebaseConfig';
 import logo from '../img/logo.png';
+import ever from '../img/ever.png';
 
 
 const Login = () => {
@@ -29,46 +30,56 @@ const Login = () => {
   
     return (
       <div className="login-container">
-        <div>
-          <img src={logo} className="logo" alt="" />
-        </div>
-        <div>
-          <Form>
-            <Form.Group controlId="formBasicEmail">
-            <Form.Label>Correo:</Form.Label>
-              <Form.Control
-                onChange={(e) => { setEmail(e.target.value); }}
-                type="email"
-                placeholder="Ingresa tu correo aquí"
-              />
-              <Form.Text className="text-muted" />
-            </Form.Group>
-  
-            <Form.Group controlId="formBasicPassword">
-            <Form.Label>Contraseña:</Form.Label>
-              <Form.Control
-                onChange={(e) => { setPass(e.target.value); }}
-                type="password"
-                placeholder="**********"
-              />
-            </Form.Group>
-          </Form>
+        <div className="form-container">
           <div>
-            <Button
-              onClick={(e) => LoginUser(e)}
-              variant="primary"
-              type="submit"
-            >
-              Iniciar Sesión
-            </Button>
+            <img src={logo} className="logo" alt="" />
           </div>
-          { msgerror && (
-          <div style={style}>
-            {' '}
-            {msgerror}
-            {' '}
+          <div className="form">
+            <Form>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <div>
+                  <Form.Label>Correo:</Form.Label>
+                </div>
+                <Form.Control
+                  onChange={(e) => { setEmail(e.target.value); }}
+                  type="email"
+                  placeholder="Ingresa tu correo aquí"
+                />
+                <Form.Text className="text-muted" />
+              </Form.Group>
+    
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <div>
+                  <Form.Label>Contraseña:</Form.Label>
+                </div>
+                <Form.Control
+                  onChange={(e) => { setPass(e.target.value); }}
+                  type="password"
+                  placeholder="**********"
+                />
+              </Form.Group>
+            </Form>
+            <div>
+              <Button
+                onClick={(e) => LoginUser(e)}
+                variant="primary"
+                type="submit"
+                className="login-btn"
+              >
+                Iniciar Sesión
+              </Button>
+            </div>
+            { msgerror && (
+            <div style={style}>
+              {' '}
+              {msgerror}
+              {' '}
+            </div>
+            ) }
           </div>
-          ) }
+        </div>
+        <div className="img-container">
+              <img src={ever} alt="" />
         </div>
       </div>
     );
