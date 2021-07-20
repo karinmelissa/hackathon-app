@@ -1,7 +1,8 @@
 import './style/App.css';
 import Login from './components/Login';
 import SignOut from './components/SignOut';
-import  Login  from './components/Login'
+import Dashboard from './components/Dashboard';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,18 +27,33 @@ function App() {
     <div className="App">
       <header className="App-header">
       </header>
-      <SignOut />
-      <Login />
+      
+     
       {userLogedin()
       }
       <Router>
+
         <Switch>
           <Route path='/adminview'>
-            <AdminProfile/>
+            <SignOut />
+            <AdminProfile/> 
           </Route>
+
+          <Route path='/dashboard'>
+            <SignOut />
+            <Dashboard /> 
+          </Route>
+
           <Route path='/'>
+            <SignOut />
             <Login/>
           </Route>
+
+          <Route path='/login'>
+            <SignOut />
+            <Dashboard /> 
+          </Route>
+
         </Switch>
       </Router>
     </div>

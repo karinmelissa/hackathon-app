@@ -19,7 +19,7 @@
 
 // Sign out
  
-import {Button}  from 'react-bootstrap';
+import { Button }  from 'react-bootstrap';
 import { auth } from '../firebaseConfig';
 
   const SignOut = ()=> {
@@ -27,17 +27,18 @@ import { auth } from '../firebaseConfig';
 
     return(
       <>
-      <div className= "mb-3">
-        <Button id="sign-out"onClick = { () =>{
+        <Button  onClick = { () =>{
             auth.signOut().then(() => {
                 // Sign-out successful.
               }).catch((error) => {
                 // An error happened.
               });
-        }
-             
-        }> Log out</Button>
-      </div>
+        }      
+        }> Log out
+        
+        </Button>
+      
+     
       </>
     )
   }
