@@ -1,11 +1,11 @@
 import SignOut from '../components/SignOut';
 import Sidebar from '../components/Sidebar';
-import Dashboard from '../components/Dashboard';
+import Search from '../components/Search';
 
-export const HomeDashboard =()=>{
+export const SearchView =()=>{
     return <>
     <SignOut />
-    <Sidebar />      
-    <Dashboard /> 
+    <Sidebar />       
+    <Search />
     </>
 }

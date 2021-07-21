@@ -1,11 +1,11 @@
 import SignOut from '../components/SignOut';
 import Sidebar from '../components/Sidebar';
-import Dashboard from '../components/Dashboard';
+import Profile from '../components/Profile';
 
-export const HomeDashboard =()=>{
+export const UserProfile =()=>{
     return <>
     <SignOut />
     <Sidebar />      
-    <Dashboard /> 
+    <Profile /> 
     </>
 }
