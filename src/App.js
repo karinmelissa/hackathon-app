@@ -31,7 +31,7 @@ function App() {
       </header>
       <Router>
         <Switch>
-          <ProtectedRoute path='/adminview' component={AdminProfile}/>
+          <ProtectedRoute path='/newadmin' component={AdminProfile}/>
           <ProtectedRoute path='/dashboard'component={HomeDashboard}/>
           <Route exact path='/' component={Login}/>
         </Switch>
