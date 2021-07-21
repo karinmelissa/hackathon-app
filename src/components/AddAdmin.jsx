@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { Form, Button, FormLabel, FormText, FormControl } from 'react-bootstrap';
 import { db } from '../firebaseConfig';
