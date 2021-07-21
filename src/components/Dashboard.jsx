@@ -18,11 +18,10 @@ import React, { useState, useEffect } from 'react';
 
 
 
-const Dashboard = () => {
+const Dashboard = ( ) => {
     let [items, setItems] = useState([]); 
 
     useEffect(() => {
-    
     db.collection('oferta').get().then((snapshot) => {
         setItems(snapshot.docs.forEach(doc => { 
           const data = doc.data();
