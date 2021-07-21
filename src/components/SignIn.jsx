@@ -15,21 +15,17 @@ const SignIn = () => {
   const toProcessData = (e) => {
     e.preventDefault();
     if (!email.trim()) {
-      // console.log('Enter email')
       setError('You must enter an email!');
       return;
     }
     if (!pass.trim()) {
-      // console.log('Enter Paswword')
       setError('You must enter an password!');
       return;
     }
     if (pass.length < 6) {
-      // console.log('Password must be greater than 6 characters')
       setError('Password of 6 characters or more');
       return;
     }
-    // console.log('Pasando todas la validaciones1')
     setError(null);
 
     if (isRegistration) {
@@ -38,24 +34,6 @@ const SignIn = () => {
       // toAccess();
     }
   };
-
-//   const toAccess = React.useCallback( async () => {
-//     try {
-//       const answer =await auth.signInWithEmailAndPassword(email, pass);
-//       console.log(answer.user);
-//     } catch (error) {
-//       console.log(error);
-//       if (error.code === 'auth/invalid-email') {
-//         setError('invalid email');
-//       }
-//       if (error.code === 'auth/user-not-found') {
-//         setError('email not registered');
-//       }
-//       if (error.code === 'auth/wrong-password') {
-//         setError('wrong password');
-//       }
-//     }
-//   }, [auth, email, pass]);
 
   const toRegister = React.useCallback(async () => {
     try {
@@ -108,36 +86,26 @@ const SignIn = () => {
               type="n°empleado"
               className="form-control mb-2"
               placeholder="123456"
-            //   onChange={(e) => setEmail(e.target.value)}
-            //   value={email}
             />
             <input
               type="Cargo o stack:"
               className="form-control mb-2"
               placeholder="ej: Full-stack developer"
-            //   onChange={(e) => setPass(e.target.value)}
-            //   value={pass}
             />
              <input
               type="Años de experiancia:"
               className="form-control mb-2"
               placeholder="example@correo.com"
-            //   onChange={(e) => setPass(e.target.value)}
-            //   value={pass}
             />
              <input
               type="Skills:"
               className="Selecciona tus habilidades"
               placeholder="ej: Full-stack developer"
-            //   onChange={(e) => setPass(e.target.value)}
-            //   value={pass}
             />
              <input
               type="Otros:"
               className="form-control mb-2"
               placeholder="ej: hobbies, actividades, etc..."
-            //   onChange={(e) => setPass(e.target.value)}
-            //   value={pass}
             />
 
             <button
