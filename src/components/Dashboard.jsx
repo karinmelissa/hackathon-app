@@ -1,18 +1,6 @@
 
 import { db } from '../firebaseConfig';
 import React from 'react';
-// import { Grid } from '@material-ui/core';
-// import { makeStyles } from '@material-ui/core/styles';
-
-// const workersSkills = db.collection('oferta').get().then((snapshot) => {
-//   snapshot.docs.forEach(doc => {
-//     const data = doc.data();
-//     data.id = doc.id;
-//     const skills= data.Skills;
-    
-    
-//   })
-// });
 
 
 const Dashboard = () => {
@@ -52,43 +40,5 @@ const Dashboard = () => {
       )
   }
   
-
-
-
-// const Dashboard = () => {
-    
-
-// React.useEffect(() => {
-
-//   // let [skills, setSkills] = React.useState([]); 
-//    const gettingData = async () =>{
-      
-//         const data = await db.collection('oferta').get().then((snapshot) => {
-//           snapshot.docs.forEach(docs => {
-//               // const data = docs.data();
-//               // console.log(data);
-//               const dataArray = data.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-//               console.log(dataArray)
-//           })
-//         });
-//    } 
-//    gettingData();
-    
-// }, []);     
-
-//     return(
-//         <>
-//             <h1> Dashboard!</h1>
-            
-            
-//         </>
-//     )
-// }
-
-
-
-
-
-
 
 export default Dashboard;
