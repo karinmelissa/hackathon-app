@@ -1,35 +1,24 @@
 import { db } from '../firebaseConfig';
 import React from 'react';
 import { Button } from 'react-bootstrap';
-// import Login from '../views/Login';
+import SignIn from './SignIn';
+import ReactDOM from 'react-dom';
+// import { Login } from '../views/Login';
 
 
-{/* <div className="order-list">
-    <h1>PEDIDOS</h1>
-    <hr className="line" />
-    { cart.map((data, key) => (
-      <div key={key}>
-        <CartItem
-          name={data.name}
-          price={numberWithCommas(data.price)}
-          id={data.id}
-          remove={fxdelete}
-        />
-      </div>
-    ))}
-    <div>
-      <hr />
-      <h2>
-        TOTAL: $
-        {numberWithCommas(total)}
-      </h2>
-    </div>
-  </div> */}
+
+const getSignIn = () =>{
+  return (
+    ReactDOM.render (
+    <SignIn />, document.getElementById('profile-update'))
+  )
+}
+
 
 
 
 const Profile = () => {
-    
+
   let [skills, setSkills] = React.useState([]); 
   React.useEffect(() => {
    
@@ -50,23 +39,26 @@ const Profile = () => {
   
       return(
           <>
-              <div> 
-                <h1> Perfil de usuario </h1>
-                
+                <h2> Perfil de usuario </h2>
                   {skills.map(item =>(
                 <>
-                    <ul>
-                        <li className="list-group-item" key = {item.id}> {item.Nombre} </li>
-                        <li className="list-group-item" key = {item.id}> Habilidades: {item.Skills} </li>
-                        <li className="list-group-item" key = {item.id}> Otros: {item.Otros} </li>
+                    <ul key = {item.id}>
+                        <li className="list-group-item" > {item.Nombre} </li>
+                        <li className="list-group-item" > Habilidades: {item.Skills} </li>
+                        <li className="list-group-item" > Otros: {item.Otros} </li>
                     </ul>
-                    <Button className="login-btn" id="profile-btn"> Actualizar </Button>
-                    <Button className="login-btn" id="profile-btn"> Validar  </Button>
+                    <div>
+                      <Button className="login-btn" id="profile-btn" onClick={getSignIn}> Actualizar </Button>
+                    </div>
+                    <div>
+                      <Button className="login-btn" id="profile-btn"> Validar  </Button>
+                    </div>
+                    
                 </>
                   ))
                   }
                 
-              </div>
+             
               
               
           </>

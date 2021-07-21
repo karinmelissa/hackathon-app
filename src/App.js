@@ -1,6 +1,6 @@
 import React from 'react';
 import './style/App.css';
-import Login from './views/Login';
+import {Login} from './views/Login';
 import { HomeDashboard } from './views/HomeDashboard';
 import { ProtectedRoute } from './ProtectedRoute';
 import {SignInUser}  from './views/SignInUser';

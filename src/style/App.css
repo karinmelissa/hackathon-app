@@ -85,7 +85,7 @@ img {
 }
 #profile-btn{
   grid-column: 4;
-  margin: 1em 0 0 70em ;
+  margin: 1em 0 0 60em ;
 }
 
 .sidebar{
@@ -103,7 +103,7 @@ img {
   display: inline-block;
   width: 70%;
   height: 80vh;
-  border: 1px solid black;
+  border: 1px solid #6785C1;
 }
 .top-align{
   align-items: flex-start;
