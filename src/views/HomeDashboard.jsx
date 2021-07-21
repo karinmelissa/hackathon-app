@@ -1,5 +1,5 @@
 import SignOut from '../components/SignOut';
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../components/SideBar';
 import Dashboard from '../components/Dashboard';
 
 export const HomeDashboard =()=>{
