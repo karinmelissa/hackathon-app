@@ -13,6 +13,7 @@ const Login = () => {
     let history = useHistory();
   
     const LoginUser = (e) => {
+      e.preventDefault();
       auth.signInWithEmailAndPassword(email, pass)
         .then( ()=>{
           localStorage.setItem('isAuth', true);
