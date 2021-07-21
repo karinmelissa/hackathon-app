@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import { useHistory } from "react-router-dom";
 import { auth } from '../firebaseConfig';
 import logo from '../img/logo.png';
 import ever from '../img/ever.png';
-
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [msgerror, setMsgError] = useState(null);
     const style = { color: 'red' };
+    let history = useHistory();
   
     const LoginUser = (e) => {
       auth.signInWithEmailAndPassword(email, pass)
-        .then((r) => console.log("inicio sesion", r))
+        .then( history.push('/dashboard') )
         .catch((err) => {
           const { code } = err;
           switch (code) {

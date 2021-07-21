@@ -1,10 +1,8 @@
+import React, { useState } from 'react';
 import './style/App.css';
-import Login from './components/Login';
-import SignOut from './components/SignOut';
-import Dashboard from './components/Dashboard';
-import Sidebar from './components/Sidebar';
-import SidebarAdm from './components/SidebarAdm';
-
+import Login from './views/Login';
+import { HomeDashboard } from './views/HomeDashboard';
+import { ProtectedRoute } from './ProtectedRoute';
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,47 +11,31 @@ import {
 import { AdminProfile } from './views/AdminProfile';
 import { auth } from './firebaseConfig'; 
 
-const userLogedin=()=>{
-  auth.onAuthStateChanged((user)=>{
-    if(user){
-      console.log('Usuario logueado', user.email)
-    }
-    else{
-      console.log('No hay usuario')
-    }
-  })
-}
 
 function App() {
+  const [isAuth, setisAuth] = useState();
+  const userLogedin=()=>{
+    auth.onAuthStateChanged((user)=>{
+      if(user){
+        setisAuth(true)
+        console.log('Usuario logueado', isAuth)
+      }
+      else{
+        setisAuth(false)
+      }
+    })
+  }
   return (
     <div className="App">
       <header className="App-header">
       </header>
-      
-     
       {userLogedin()
       }
       <Router>
-
         <Switch>
-          <Route path='/adminview'>
-            <SignOut />
-            <AdminProfile/> 
-            <SidebarAdm />
-          </Route>
-
-          <Route path='/dashboard'>
-            <SignOut />
-            <Sidebar />
-            <Dashboard /> 
-          </Route>
-
-          <Route path='/'>
-            <SignOut />
-            <Login/>
-          </Route>
-
-
+          <ProtectedRoute path='/adminview' component={AdminProfile} isAuth={isAuth}/>
+          <ProtectedRoute path='/dashboard'component={HomeDashboard} isAuth={isAuth}/>
+          <Route exact path='/' component={Login}/>
         </Switch>
       </Router>
     </div>
