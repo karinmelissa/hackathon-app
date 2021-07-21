@@ -80,7 +80,6 @@ img {
   background-color: #e8eaee;
   height: max-content;
   border-bottom: 6px solid #dedfe2;
-
 }
 
 #login-btn{
@@ -92,9 +91,28 @@ img {
   background-color: #6785C1;
   color: #FFFFFF;
   width: 20em;
-  height: 100vh;
+  height: 80vh;
+  display: inline-block;
 }
 
 .side-list{
   line-height: 3em;
+}
+.profileContainer{
+  display: inline-block;
+  width: 70%;
+  height: 80vh;
+  border: 1px solid black;
+}
+.top-align{
+  align-items: flex-start;
+}
+.mainContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.table{
+  width: 50%;
+  margin: auto;
 }
