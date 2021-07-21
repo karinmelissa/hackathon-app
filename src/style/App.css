@@ -86,6 +86,10 @@ img {
   grid-column: 4;
   margin: 1em 0 0 10em ;
 }
+#profile-btn{
+  grid-column: 4;
+  margin: 1em 0 0 70em ;
+}
 
 .sidebar{
   background-color: #6785C1;
