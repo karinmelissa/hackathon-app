@@ -5,6 +5,7 @@ import { HomeDashboard } from './views/HomeDashboard';
 import { ProtectedRoute } from './ProtectedRoute';
 import {SignInUser}  from './views/SignInUser';
 import {UserProfile}  from './views/UserProfile';
+import {SearchView}  from './views/SearchView';
 import {
   BrowserRouter as Router,
   Switch,
@@ -37,6 +38,7 @@ function App() {
           <ProtectedRoute path='/dashboard'component={HomeDashboard}/>
           <ProtectedRoute path='/signin'component={SignInUser}/>
           <ProtectedRoute path='/userprofile'component={UserProfile}/>
+          <ProtectedRoute path='/search'component={SearchView}/>
           <Route exact path='/' component={Login}/>
         </Switch>
       </Router>
