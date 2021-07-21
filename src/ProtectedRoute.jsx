@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 
 export const ProtectedRoute = ({
-	isAuth: isAuth,
 	component: Component,
 	...rest
 }) => {
+	const isAuth = localStorage.getItem('isAuth');
 	console.log(isAuth)
 	return (
 		<Route
@@ -22,5 +22,3 @@ export const ProtectedRoute = ({
 		/>
 	)
 }
-
-

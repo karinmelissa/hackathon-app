@@ -11,30 +11,28 @@ import {
 import { AdminProfile } from './views/AdminProfile';
 import { auth } from './firebaseConfig'; 
 
+const userLogedin=()=>{
+  auth.onAuthStateChanged((user)=>{
+    if(user){
+      localStorage.setItem('isAuth', true)
+    }
+    else{
+      localStorage.setItem('isAuth', false)
+    }
+  })
+} 
 
-function App() {
-  const [isAuth, setisAuth] = useState();
-  const userLogedin=()=>{
-    auth.onAuthStateChanged((user)=>{
-      if(user){
-        setisAuth(true)
-        console.log('Usuario logueado', isAuth)
-      }
-      else{
-        setisAuth(false)
-      }
-    })
-  }
+function App() { 
+  userLogedin()
+  
   return (
     <div className="App">
       <header className="App-header">
       </header>
-      {userLogedin()
-      }
       <Router>
         <Switch>
-          <ProtectedRoute path='/adminview' component={AdminProfile} isAuth={isAuth}/>
-          <ProtectedRoute path='/dashboard'component={HomeDashboard} isAuth={isAuth}/>
+          <ProtectedRoute path='/adminview' component={AdminProfile}/>
+          <ProtectedRoute path='/dashboard'component={HomeDashboard}/>
           <Route exact path='/' component={Login}/>
         </Switch>
       </Router>

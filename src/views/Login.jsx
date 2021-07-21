@@ -14,7 +14,10 @@ const Login = () => {
   
     const LoginUser = (e) => {
       auth.signInWithEmailAndPassword(email, pass)
-        .then( history.push('/dashboard') )
+        .then( ()=>{
+          localStorage.setItem('isAuth', true);
+          history.push('/dashboard')
+        })
         .catch((err) => {
           const { code } = err;
           switch (code) {

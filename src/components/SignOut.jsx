@@ -12,7 +12,7 @@ const SignOut = () => {
           <img src={logo} className="logo-sgn-up" alt="" />
         </div>
         <Button variant="primary" type="submit" className="login-btn" id="login-btn" onClick={() => {
-          auth.signOut().then(() => {
+          auth.signOut().then(() => { 
             history.push('/')
           }).catch((error) => {
             // An error happened.
