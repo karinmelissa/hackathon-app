@@ -1,12 +1,41 @@
+import React, { useState } from 'react';
 import './style/App.css';
-import Login from './components/Login'
+import Login from './views/Login';
+import { HomeDashboard } from './views/HomeDashboard';
+import { ProtectedRoute } from './ProtectedRoute';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route 
+} from "react-router-dom";
+import { AdminProfile } from './views/AdminProfile';
+import { auth } from './firebaseConfig'; 
 
-function App() {
+const userLogedin=()=>{
+  auth.onAuthStateChanged((user)=>{
+    if(user){
+      localStorage.setItem('isAuth', true)
+    }
+    else{
+      localStorage.setItem('isAuth', false)
+    }
+  })
+} 
+
+function App() { 
+  userLogedin()
+  
   return (
     <div className="App">
       <header className="App-header">
       </header>
-      <Login />
+      <Router>
+        <Switch>
+          <ProtectedRoute path='/adminview' component={AdminProfile}/>
+          <ProtectedRoute path='/dashboard'component={HomeDashboard}/>
+          <Route exact path='/' component={Login}/>
+        </Switch>
+      </Router>
     </div>
   );
 }
