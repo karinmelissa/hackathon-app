@@ -3,31 +3,6 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 // import Login from '../views/Login';
 
-
-{/* <div className="order-list">
-    <h1>PEDIDOS</h1>
-    <hr className="line" />
-    { cart.map((data, key) => (
-      <div key={key}>
-        <CartItem
-          name={data.name}
-          price={numberWithCommas(data.price)}
-          id={data.id}
-          remove={fxdelete}
-        />
-      </div>
-    ))}
-    <div>
-      <hr />
-      <h2>
-        TOTAL: $
-        {numberWithCommas(total)}
-      </h2>
-    </div>
-  </div> */}
-
-
-
 const Profile = () => {
     
   let [skills, setSkills] = React.useState([]); 

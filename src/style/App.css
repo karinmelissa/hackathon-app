@@ -157,3 +157,12 @@ img {
   opacity: 2.1;
 }
 
+.table-user{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(50px, auto);
+  width: max-content;
+  height: max-content;
+}
+
