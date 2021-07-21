@@ -9,10 +9,11 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [msgerror, setMsgError] = useState(null);
-    const style = { color: 'red' };
+    const style = { color: 'black' };
     let history = useHistory();
   
     const LoginUser = (e) => {
+      e.preventDefault();
       auth.signInWithEmailAndPassword(email, pass)
         .then( ()=>{
           localStorage.setItem('isAuth', true);
@@ -35,12 +36,10 @@ const Login = () => {
     return (
       <div className="login-container">
         <div className="form-container">
-          <div>
-            <img src={logo} className="logo" alt="" />
-          </div>
-          <div className="form">
-            <Form>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+        <img src={logo} className="logo" alt="" />
+          <div className="box">
+            <Form className="form">
+              <Form.Group controlId="formBasicEmail">
                 <div>
                   <Form.Label>Correo:</Form.Label>
                 </div>
@@ -48,11 +47,12 @@ const Login = () => {
                   onChange={(e) => { setEmail(e.target.value); }}
                   type="email"
                   placeholder="Ingresa tu correo aquí"
+                  className="email"
                 />
                 <Form.Text className="text-muted" />
               </Form.Group>
     
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group controlId="formBasicPassword">
                 <div>
                   <Form.Label>Contraseña:</Form.Label>
                 </div>
@@ -60,10 +60,9 @@ const Login = () => {
                   onChange={(e) => { setPass(e.target.value); }}
                   type="password"
                   placeholder="**********"
+                  className="password"
                 />
               </Form.Group>
-            </Form>
-            <div>
               <Button
                 onClick={(e) => LoginUser(e)}
                 variant="primary"
@@ -72,7 +71,7 @@ const Login = () => {
               >
                 Iniciar Sesión
               </Button>
-            </div>
+            </Form>
             { msgerror && (
             <div style={style}>
               {' '}
