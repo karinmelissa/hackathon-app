@@ -2,15 +2,22 @@
   display: flex;
   align-items: center;
   max-height: 100vh;
-  height: inheritage;
+  min-width: 100vh;
 }
 
 .logo {
-  Width: 369px;
-  Height: 162px;
+  Width: 50%;
+  Height: 30%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .login-btn {
+  margin-top: 7%;
   background-color: #6785C1;
   border-radius: 30px;
   border-color: #6785C1;
@@ -18,20 +25,37 @@
 }
 
 .form-container {
-  height: 100%;
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
+  height: 50%;
 }
 
-.form {
-  /* Width:538px;
-  Height: 566px; */
+/* .email, .password {
+  width: 25rem;
+  height: 1.5rem;
+} */
+
+.box {
+  margin-left: 5%;
+  border-style:solid;
   border-color: #6785C1;
-  background-color: #6785C1;
+  width: 60%;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .img-container {
-  margin-right: 5%;
+  margin-right: 2%;
   height: 100vh;
   width: 50%;
-  height: 60%;
 }
+
+img {
+  max-height: 100%;
+}
+
