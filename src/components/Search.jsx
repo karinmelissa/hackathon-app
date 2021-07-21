@@ -1,8 +1,7 @@
 import { db } from '../firebaseConfig';
 import React from 'react';
 
-
-const Dashboard = () => {
+const Search = () => {
     
   let [skills, setSkills] = React.useState([]); 
   React.useEffect(() => {
@@ -25,10 +24,19 @@ const Dashboard = () => {
       return(
           <>
               <div> 
-                <h1> Dashboard! </h1>
-                <ul>
+                <h1> Buscar </h1>
+                <ul className="user-list">
                   {skills.map(item =>(
-                    <li className="list-group-item" key = {item.id}> {item.Skills} </li>
+                    <div className="user-container">
+                      <li className="user-info" id={item.Nombre}>
+                      <figure>
+                        <div className="user-number">Nombre: {item.Nombre}</div>
+                        <div className="user-number">Número: {item.Numero}</div>
+                        {/* <div className="user-skills">Skills: {item.Skills}</div> */}
+                      </figure>
+                      </li>
+                    </div>
+                    
                   ))
                   }
                 </ul>
@@ -38,8 +46,6 @@ const Dashboard = () => {
           </>
       )
   }
-  
 
-export default Dashboard;
-
+export default Search;
 
