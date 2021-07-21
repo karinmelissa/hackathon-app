@@ -5,19 +5,27 @@ import { auth } from '../firebaseConfig';
 import logo from '../img/logo.png';
 import ever from '../img/ever.png';
 
-const Login = (props) => {
+
+const Login = () => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [msgerror, setMsgError] = useState(null);
     const style = { color: 'black' };
     let history = useHistory();
+   
+
+    const add = () => {
+      const mail= email;
+      console.log(mail);
+      return mail;
+    }
   
     const LoginUser = (e) => {
       e.preventDefault();
       auth.signInWithEmailAndPassword(email, pass)
         .then( ()=>{
           localStorage.setItem('isAuth', true);
-          history.push('/dashboard')
+          history.push('/dashboard');
         })
         .catch((err) => {
           const { code } = err;
@@ -32,25 +40,30 @@ const Login = (props) => {
           }
         });
     };
-  
+
     return (
       <div className="login-container">
         <div className="form-container">
         <img src={logo} className="logo" alt="" />
           <div className="box">
-            <Form className="form">
+            <Form className="form" onClick ={add} data-email={email}>
+           
               <Form.Group controlId="formBasicEmail">
                 <div>
                   <Form.Label>Correo:</Form.Label>
                 </div>
+                
                 <Form.Control
                   onChange={(e) => { setEmail(e.target.value); }}
                   type="email"
                   placeholder="Ingresa tu correo aquí"
                   className="email"
+                  value= {email}
+                 
                 />
                 <Form.Text className="text-muted" />
               </Form.Group>
+              
     
               <Form.Group controlId="formBasicPassword">
                 <div>
@@ -68,6 +81,7 @@ const Login = (props) => {
                 variant="primary"
                 type="submit"
                 className="login-btn"
+                
               >
                 Iniciar Sesión
               </Button>
@@ -85,8 +99,9 @@ const Login = (props) => {
               <img src={ever} alt="" />
         </div>
       </div>
-    );
+    );  
 };
-  
-export default Login;
+
+
+export {Login};
   
