@@ -193,3 +193,12 @@ img {
   display:block;
 }
 
+.table-user{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(50px, auto);
+  width: max-content;
+  height: max-content;
+}
+
