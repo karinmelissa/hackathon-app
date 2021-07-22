@@ -1,7 +1,6 @@
 import { db } from '../firebaseConfig';
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
-//import { PieChart } from 'react-minimal-pie-chart';
 
 
 const Dashboard = () => {

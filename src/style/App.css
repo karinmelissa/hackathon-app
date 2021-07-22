@@ -1,6 +1,9 @@
 a{
   color: #FFFFFF;
 }
+p{
+  color: #505050
+}
 
 a:link, a:visited, a:active {
   text-decoration:none;
@@ -39,7 +42,7 @@ a:link, a:visited, a:active {
   border-color: #6785C1;
   color: #FFFFFF;
   height: 3em;
-  width: 7em;
+  width: 7.5em;
   font-size: medium;
 }
 
@@ -72,6 +75,11 @@ a:link, a:visited, a:active {
 img {
   max-height: 100%;
 }
+.dashboardText{
+  width: 88%;
+  text-align: justify;
+  margin: auto;
+}
 
 .container {
   display: grid;
@@ -94,8 +102,11 @@ img {
 .profile{
   color: #6785C1;
   border-left: 7px solid #6785C1;
-  margin: 2em;
+  margin: 1em;
   padding: 0.5em;
+}
+.headerText{
+  color: #6785C1;
 }
 
 .sidebar{
