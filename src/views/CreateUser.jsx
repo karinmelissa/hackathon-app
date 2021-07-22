@@ -1,14 +1,14 @@
 import SignOut from '../components/SignOut';
 import Sidebar from '../components/sideBar';
-import SignIn from '../components/SignIn';
+import User from '../components/User';
 
-export const SignInUser =()=>{
+export const CreateUser =()=>{
     return <>
       <SignOut />
       <div className='mainContainer'>
         <Sidebar />
 	      <div className='profileContainer'>
-          <SignIn />
+          <User />
 				</div>
 		</div>
     </>
