@@ -25,7 +25,7 @@ const Dashboard = () => {
       return(
           <>
               <div> 
-                <h1> Dashboard! </h1>
+                <h2 className="profile"> Dashboard </h2>
                 <ul>
                   {skills.map(item =>(
                     <li className="list-group-item" key = {item.id}> {item.Skills} </li>

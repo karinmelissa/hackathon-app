@@ -36,10 +36,10 @@ function App() {
       <Router>
         <Switch>
           <ProtectedRoute path='/newadmin' component={AdminProfile}/>
-          <ProtectedRoute path='/dashboard'component={HomeDashboard}/>
+          <ProtectedRoute path='/dashboard/:usermail'component={HomeDashboard}/>
           <ProtectedRoute path='/signin'component={SignInUser}/>
           <ProtectedRoute path='/userprofile/:usermail'component={UserProfile}/>
-          <ProtectedRoute path='/search'component={SearchView}/>
+          <ProtectedRoute path='/search/:usermail'component={SearchView}/>
           <Route exact path='/' component={Login}/>
         </Switch>
       </Router>
