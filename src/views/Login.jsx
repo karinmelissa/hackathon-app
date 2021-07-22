@@ -33,7 +33,7 @@ const Login = () => {
             case 'auth/user-not-found':
               setMsgError('Usuario no registrado');
               break;
-            default: setMsgError('');
+            default: setMsgError('Error en inicio de sesion');
           }
         });
     };
@@ -45,7 +45,6 @@ const Login = () => {
         <img src={logo} className="logo" alt="" />
           <div className="box">
             <Form className="form" >
-             <Link to={`/userprofile/${email}`}>AQUI ESTOY!</Link>
               <Form.Group controlId="formBasicEmail">
                 <div>
                   <Form.Label>Correo:</Form.Label>
