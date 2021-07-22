@@ -21,7 +21,8 @@ export const AdminList = () => {
 
 	return (
 		<div>
-			<h2>Lista de administradores</h2>
+			<h2 className="username">Lista de administradores</h2>
+			
 			<table className="table table-bordered">
 				<thead>
 					<tr>
@@ -38,6 +39,7 @@ export const AdminList = () => {
 					))}
 				</tbody>
 			</table>
+			
 
 			<div id="profile-btn">
               <Dropdown >
