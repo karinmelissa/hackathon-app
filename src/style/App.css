@@ -9,7 +9,9 @@ a:link, a:visited, a:active {
   text-decoration:none;
 }
 
-
+.link-color{
+  color:#6785C1;
+}
 .login-container {
   display: flex;
   align-items: center;
@@ -178,9 +180,10 @@ img {
 
 .user-list {
   justify-content: space-around;
-  border: 1px solid black;
+  border: 1px solid #6785C1;
   display: flex;
   flex-wrap: wrap;
+  
   
 }
 
@@ -188,6 +191,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  
 }
 
 .user-info {
@@ -258,4 +262,16 @@ img {
 }
 .demandaContainer, .ofertaContainer{
   width: 45%;
+}
+
+.admin-wrapper{
+  margin: 4em;
+  width: inherit;
+  /* border: 1px solid #6785C1; */
+}
+
+.form-wrapper{
+  margin: 0.5em;
+  width: inherit;
+  /* border: 1px solid #6785C1; */
 }

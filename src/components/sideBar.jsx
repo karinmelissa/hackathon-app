@@ -9,7 +9,7 @@ const Sidebar = () => {
             <ul className="side-list">
                 <li> <a href={`/dashboard/${usermail}`}> Dashboard </a> </li>
                 <li> <a href={`/userprofile/${usermail}`}> Perfil de usuario </a> </li>
-                <li> <a href={`/search/${usermail}`}> Buscar </a> </li>
+                <li> <a href={`/search/${usermail}`}> Nuestros colaboradores </a> </li>
             </ul>
         </div>
     )

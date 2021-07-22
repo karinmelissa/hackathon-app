@@ -61,13 +61,13 @@ const Dashboard = () => {
     <>
       <div className='dashboardGraphics'>
         <div className='demandaContainer'>
-          <h3 className="headerText">Lo que nuestros clientes necesitan</h3>
+          <h4 className='profile'>Lo que nuestros clientes necesitan</h4>
           <p>En everis trabajamos con cientos de empresas de distintas areas e industrias del pais y de Latam, es por esto que requerimos de distintos perfiles para cubrir nuestra demanda</p>
           <p>Esto es lo que ellos estan buscando de nosotros</p>
           <Pie className='grafico' data={dataDemmand} options={opciones}/>
         </div>
         <div className='ofertaContainer'>
-          <h3 className="headerText">Nuestro talento....</h3>
+          <h4 className='profile'>Nuestro talento....</h4>
           <p>Los colaboradores de Everis son un talento de habilidades y conocimiento diverso, pudiendo crear equipos de trabajo que respondan con las necesidades de nuestros clientes.</p>
           <p>En el siguiente grafico podemos ver en que areas de desarollo van apuntado nuestros compañeros de trabajo</p>
           <Pie className='grafico' data={data} options={opciones}/>
