@@ -6,6 +6,8 @@ import { useState } from 'react';
 const Search = () => {
 
   let [skills, setSkills] = useState([]);
+  const [busqueda, setBusqueda]= useState("");
+
 
   React.useEffect(() => {
 
@@ -14,6 +16,7 @@ const Search = () => {
         const data = await db.collection('oferta').get()
         const dataArray = data.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
         setSkills(dataArray);
+        // console.log(dataArray)
       } catch (err) {
         console.log(err)
       }
@@ -23,16 +26,24 @@ const Search = () => {
 
   }, []);
 
+  //Función para obtener el valor del input
+  const handleChange = e =>{
+    setBusqueda(e.target.value);
+    console.log(e.target.value)
+  }
+
   return (
     <>
       <div className="profileContainer">
         <label className="labelStyle">Buscar</label>
         <div className="bar-container">
           <div className="search-bar">
-            <input 
-            type="text" 
-            placeholder="Ingresa tu búsqueda..." 
-            className="user-search"
+            <input
+              type="text"
+              placeholder="Ingresa tu búsqueda..."
+              className="user-search"
+              value={busqueda}
+              onChange={handleChange}
             />
             <button className="search-btn">
               <img src={searcher} alt="" className="searcher" />
@@ -48,9 +59,9 @@ const Search = () => {
                     <div className="user-number">Nombre: {item.Nombre}</div>
                     <div className="user-number">Número: {item.Numero}</div>
                     {/* <div className="user-skills">Skills: {item.Skills}</div> */}
-                    <button 
-                    className="seeMoreBtn"
-                    onClick={() => window.location.href = 'http://localhost:3000/userprofile'}
+                    <button
+                      className="seeMoreBtn"
+                      onClick={() => window.location.href = 'http://localhost:3000/userprofile'}
                     >
                       Ver más...
                     </button>
@@ -62,8 +73,6 @@ const Search = () => {
           </ul>
         </div>
       </div>
-
-
     </>
   )
 }
