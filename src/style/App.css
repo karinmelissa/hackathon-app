@@ -241,4 +241,10 @@ img {
   width: max-content;
   height: max-content;
 }
-
+.dashboardGraphics{
+  display: flex;
+  justify-content: space-around;
+}
+.demandaContainer, .ofertaContainer{
+  width: 45%;
+}
