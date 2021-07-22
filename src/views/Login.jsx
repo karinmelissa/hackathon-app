@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button} from 'react-bootstrap';
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { auth } from '../firebaseConfig';
 import logo from '../img/logo.png';
 import ever from '../img/ever.png';
@@ -14,18 +15,14 @@ const Login = () => {
     let history = useHistory();
    
 
-    const add = () => {
-      const mail= email;
-      console.log(mail);
-      return mail;
-    }
+  
   
     const LoginUser = (e) => {
       e.preventDefault();
       auth.signInWithEmailAndPassword(email, pass)
         .then( ()=>{
           localStorage.setItem('isAuth', true);
-          history.push('/dashboard');
+          history.push(`/userprofile/${email}`); 
         })
         .catch((err) => {
           const { code } = err;
@@ -43,11 +40,12 @@ const Login = () => {
 
     return (
       <div className="login-container">
+        
         <div className="form-container">
         <img src={logo} className="logo" alt="" />
           <div className="box">
-            <Form className="form" onClick ={add} data-email={email}>
-           
+            <Form className="form" >
+             <Link to={`/userprofile/${email}`}>AQUI ESTOY!</Link>
               <Form.Group controlId="formBasicEmail">
                 <div>
                   <Form.Label>Correo:</Form.Label>
@@ -79,8 +77,9 @@ const Login = () => {
               <Button
                 onClick={(e) => LoginUser(e)}
                 variant="primary"
-                type="submit"
+                type="button"
                 className="login-btn"
+                
                 
               >
                 Iniciar Sesión

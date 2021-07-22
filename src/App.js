@@ -37,7 +37,7 @@ function App() {
           <ProtectedRoute path='/newadmin' component={AdminProfile}/>
           <ProtectedRoute path='/dashboard'component={HomeDashboard}/>
           <ProtectedRoute path='/signin'component={SignInUser}/>
-          <ProtectedRoute path='/userprofile'component={UserProfile}/>
+          <ProtectedRoute path='/userprofile/:usermail'component={UserProfile}/>
           <ProtectedRoute path='/search'component={SearchView}/>
           <Route exact path='/' component={Login}/>
         </Switch>

@@ -1,6 +1,8 @@
 import { db } from '../firebaseConfig';
 import React from 'react';
 import { Button } from 'react-bootstrap';
+
+import { useParams } from "react-router-dom";
 import SignIn from './SignIn';
 import ReactDOM from 'react-dom';
 // import { Login } from '../views/Login';
@@ -19,6 +21,10 @@ const getSignIn = () =>{
 
 const Profile = () => {
 
+  let { usermail } = useParams();
+  console.log(`hola ${usermail}`);
+ 
+
   let [skills, setSkills] = React.useState([]); 
   React.useEffect(() => {
    
@@ -26,7 +32,7 @@ const Profile = () => {
      try{
         const data = await db.collection('oferta').get()
         const dataArray = data.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-        const username = dataArray.filter((doc)=> doc.Email === 'correo53@correo.com')
+        const username = dataArray.filter((doc)=> doc.Email === usermail)
         setSkills(username);
      }catch(err){
         console.log(err)
