@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button} from 'react-bootstrap';
 import { useHistory } from "react-router-dom";
 import { auth } from '../firebaseConfig';
 import logo from '../img/logo.png';
@@ -11,13 +11,14 @@ const Login = () => {
     const [msgerror, setMsgError] = useState(null);
     const style = { color: 'black' };
     let history = useHistory();
-  
+   
+
     const LoginUser = (e) => {
       e.preventDefault();
       auth.signInWithEmailAndPassword(email, pass)
         .then( ()=>{
           localStorage.setItem('isAuth', true);
-          history.push('/dashboard')
+          history.push(`/dashboard/${email}`); 
         })
         .catch((err) => {
           const { code } = err;
@@ -28,18 +29,20 @@ const Login = () => {
             case 'auth/user-not-found':
               setMsgError('Usuario no registrado');
               break;
-            default: setMsgError('');
+            default: setMsgError('Error en inicio de sesion');
           }
         });
     };
-  
+
     return (
       <div className="login-container">
+        
         <div className="form-container">
         <img src={logo} className="logo" alt="" />
           <div className="box">
-            <Form className="form">
+            <Form className="form" >
               <Form.Group controlId="formBasicEmail">
+                <h5 className="headerText"> Matriz de conocimientos </h5>
                 <div>
                   <Form.Label>Correo:</Form.Label>
                 </div>
@@ -48,14 +51,11 @@ const Login = () => {
                   type="email"
                   placeholder="Ingresa tu correo aquí"
                   className="email"
+                  value= {email}
                 />
                 <Form.Text className="text-muted" />
-              </Form.Group>
-    
-              <Form.Group controlId="formBasicPassword">
-                <div>
-                  <Form.Label>Contraseña:</Form.Label>
-                </div>
+                <Form.Group controlId="formBasicPassword">
+                <Form.Label>Contraseña:</Form.Label>
                 <Form.Control
                   onChange={(e) => { setPass(e.target.value); }}
                   type="password"
@@ -63,10 +63,11 @@ const Login = () => {
                   className="password"
                 />
               </Form.Group>
+              </Form.Group>
               <Button
                 onClick={(e) => LoginUser(e)}
                 variant="primary"
-                type="submit"
+                type="button"
                 className="login-btn"
               >
                 Iniciar Sesión
@@ -85,8 +86,9 @@ const Login = () => {
               <img src={ever} alt="" />
         </div>
       </div>
-    );
+    );  
 };
-  
-export default Login;
+
+
+export {Login};
   

@@ -1,9 +1,11 @@
 import React from 'react';
 import './style/App.css';
-import Login from './views/Login';
+import {Login} from './views/Login';
 import { HomeDashboard } from './views/HomeDashboard';
 import { ProtectedRoute } from './ProtectedRoute';
 import {SignInUser}  from './views/SignInUser';
+import {UserProfile}  from './views/UserProfile';
+import {SearchView}  from './views/SearchView';
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,6 +13,7 @@ import {
 } from "react-router-dom";
 import { AdminProfile } from './views/AdminProfile';
 import { auth } from './firebaseConfig'; 
+import { CreateUser } from './views/CreateUser';
 
 const userLogedin=()=>{
   auth.onAuthStateChanged((user)=>{
@@ -23,6 +26,7 @@ const userLogedin=()=>{
   })
 } 
 
+
 function App() { 
   userLogedin()
   
@@ -32,9 +36,12 @@ function App() {
       </header>
       <Router>
         <Switch>
-          <ProtectedRoute path='/newadmin' component={AdminProfile}/>
+          <ProtectedRoute path='/userprofile/admin@everis.cl' component={AdminProfile}/>
           <ProtectedRoute path='/dashboard'component={HomeDashboard}/>
-          <ProtectedRoute path='/signin'component={SignInUser}/>
+          <ProtectedRoute path='/signin/:usermail'component={SignInUser}/>
+          <ProtectedRoute path='/userprofile/:usermail'component={UserProfile}/>
+          <ProtectedRoute path='/search/:usermail'component={SearchView}/>
+          <ProtectedRoute path='/user/:usermail'component={CreateUser}/>
           <Route exact path='/' component={Login}/>
         </Switch>
       </Router>
