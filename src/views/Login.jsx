@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button} from 'react-bootstrap';
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { auth } from '../firebaseConfig';
 import logo from '../img/logo.png';
 import ever from '../img/ever.png';
@@ -14,8 +13,6 @@ const Login = () => {
     let history = useHistory();
    
 
-  
-  
     const LoginUser = (e) => {
       e.preventDefault();
       auth.signInWithEmailAndPassword(email, pass)

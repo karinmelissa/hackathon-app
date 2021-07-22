@@ -11,7 +11,6 @@ const Dashboard = () => {
      try{
         const data = await db.collection('oferta').get()
         const dataArray = data.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-        console.log(dataArray);
         setSkills(dataArray);
      }catch(err){
         console.log(err)

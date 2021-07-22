@@ -36,12 +36,12 @@ function App() {
       </header>
       <Router>
         <Switch>
-          <ProtectedRoute path='/newadmin' component={AdminProfile}/>
+          <ProtectedRoute path='/userprofile/admin@everis.cl' component={AdminProfile}/>
           <ProtectedRoute path='/dashboard/:usermail'component={HomeDashboard}/>
-          <ProtectedRoute path='/signin'component={SignInUser}/>
+          <ProtectedRoute path='/signin/:usermail'component={SignInUser}/>
           <ProtectedRoute path='/userprofile/:usermail'component={UserProfile}/>
           <ProtectedRoute path='/search/:usermail'component={SearchView}/>
-          <ProtectedRoute path='/user'component={CreateUser}/>
+          <ProtectedRoute path='/user/:usermail'component={CreateUser}/>
           <Route exact path='/' component={Login}/>
         </Switch>
       </Router>
