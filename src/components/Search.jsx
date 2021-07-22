@@ -57,12 +57,11 @@ const Search = () => {
               <div className="user-container">
                 <li className="user-info" id={item.Nombre}>
                   <figure>
-                    <div className="user-number">Nombre: {item.Nombre}</div>
-                    <div className="user-number">Número: {item.Numero}</div>
-                    <a href ={`/userprofile/${item.Email}`}> Ver más...</a>
+                    <div className="user-number">{item.Nombre}</div>
+                    <div className="user-number">{item.Numero}</div>
+                    <div className="user-number">{item.Email}</div>
+                    <a className='viewMore' href ={`/userprofile/${item.Email}`}> Ver más...</a>
                     {/* <div className="user-skills">Skills: {item.Skills}</div> */}
-
-                    
                     {/* <button
                       className="seeMoreBtn"
                       onClick={() => window.location.href = 'http://localhost:3000/userprofile/'+usermail}
