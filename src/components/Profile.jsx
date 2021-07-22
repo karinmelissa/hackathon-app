@@ -12,19 +12,6 @@ const getSignIn = () =>{
   )
 }
 
-const ValidationComp = () => {
-  
-  return(
-    <div > Sus skills han sido validadas </div>
-  )
-}
-
-const userValidate = () => {
-  return(
-    ReactDOM.render (
-      <ValidationComp />, document.getElementById('validation-user'))
-  )
-}
 
 const Profile = () => {
 

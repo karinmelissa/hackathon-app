@@ -1,5 +1,5 @@
 import SignOut from '../components/SignOut';
-import Sidebar from '../components/sideBar';
+import Sidebar from '../components/Sidebar';
 import Profile from '../components/Profile';
 
 
