@@ -5,9 +5,6 @@ import { useParams } from "react-router-dom";
 import SignIn from './SignIn';
 import ReactDOM from 'react-dom';
 
-
-
-
 const getSignIn = () =>{
   return (
     ReactDOM.render (
@@ -51,44 +48,40 @@ const Profile = () => {
   }, []);     
   
   return(
-      <>
-            <h2 className="profile"> Mi Perfil </h2>
-              {skills.map(item =>(
-            <>
-                <ul key = {item.id}>
-                    <li className="username" > {item.Nombre} </li>
-                    <div className="username"> Mis habilidades:  
-                    <li className="skills-profile" > {item.Skills +" "} </li>
-                    </div>
-                    <div className="username"> Otros conocimientos: 
-                    <li className="skills-profile">  {item.Otros+" "} </li>
-                    </div>
-                </ul>
-                <div>
-                  <Button className="login-btn" id="profile-btn" onClick={getSignIn}> Actualizar </Button>
+  <>
+    <h2 className="profile"> Mi Perfil </h2>
+      {skills.map(item =>(
+        <>
+            <ul key = {item.id}>
+                <li className="username" > {item.Nombre} </li>
+                <div className="username"> Mis habilidades:  
+                <li className="skills-profile" > {item.Skills +" "} </li>
                 </div>
-                
-                <div className="username"> Validaciones </div>
-                <div id="profile-btn">
-                  <Dropdown >
-                    <Dropdown.Toggle className="login-btn" id="dropdown-basic">
-                      Validar
-                    </Dropdown.Toggle>
+                <div className="username"> Otros conocimientos: 
+                <li className="skills-profile">  {item.Otros+" "} </li>
+                </div>
+            </ul>
+            <div>
+              <Button className="login-btn" id="profile-btn" onClick={getSignIn}> Actualizar </Button>
+            </div>
+            
+            <div className="username"> Validaciones </div>
+            <div id="profile-btn">
+              <Dropdown >
+                <Dropdown.Toggle className="login-btn" id="dropdown-basic">
+                  Validar
+                </Dropdown.Toggle>
 
-                    <Dropdown.Menu>
-                      <Dropdown.Item onClick={userValidate}> {item.Skills +" "} </Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                </div>
-                
-                <div id="validation-user">{usermail}</div>
-    
-            </>
-              ))
-              }   
-          
-      </>
-    )
+                <Dropdown.Menu>
+                  <Dropdown.Item onClick={userValidate}> {item.Skills +" "} </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+            <div id="validation-user">{usermail}</div>
+        </>
+      ))}   
+    </>
+  )
 }
   
 
