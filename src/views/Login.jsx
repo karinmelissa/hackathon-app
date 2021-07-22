@@ -42,27 +42,20 @@ const Login = () => {
           <div className="box">
             <Form className="form" >
               <Form.Group controlId="formBasicEmail">
-                <h5> Matriz de conocimientos </h5>
+                <h5 className="headerText"> Matriz de conocimientos </h5>
                 <div>
                   <Form.Label>Correo:</Form.Label>
                 </div>
-                
                 <Form.Control
                   onChange={(e) => { setEmail(e.target.value); }}
                   type="email"
                   placeholder="Ingresa tu correo aquí"
                   className="email"
                   value= {email}
-                 
                 />
                 <Form.Text className="text-muted" />
-              </Form.Group>
-              
-    
-              <Form.Group controlId="formBasicPassword">
-                <div>
-                  <Form.Label>Contraseña:</Form.Label>
-                </div>
+                <Form.Group controlId="formBasicPassword">
+                <Form.Label>Contraseña:</Form.Label>
                 <Form.Control
                   onChange={(e) => { setPass(e.target.value); }}
                   type="password"
@@ -70,13 +63,12 @@ const Login = () => {
                   className="password"
                 />
               </Form.Group>
+              </Form.Group>
               <Button
                 onClick={(e) => LoginUser(e)}
                 variant="primary"
                 type="button"
                 className="login-btn"
-                
-                
               >
                 Iniciar Sesión
               </Button>
