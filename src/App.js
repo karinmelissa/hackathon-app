@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 import { AdminProfile } from './views/AdminProfile';
 import { auth } from './firebaseConfig'; 
+import { CreateUser } from './views/CreateUser';
 
 const userLogedin=()=>{
   auth.onAuthStateChanged((user)=>{
@@ -37,6 +38,7 @@ function App() {
           <ProtectedRoute path='/newadmin' component={AdminProfile}/>
           <ProtectedRoute path='/dashboard'component={HomeDashboard}/>
           <ProtectedRoute path='/signin'component={SignInUser}/>
+          <ProtectedRoute path='/user'component={CreateUser}/>
           <ProtectedRoute path='/userprofile'component={UserProfile}/>
           <ProtectedRoute path='/search'component={SearchView}/>
           <Route exact path='/' component={Login}/>
