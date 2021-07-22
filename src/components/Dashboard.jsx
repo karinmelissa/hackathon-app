@@ -3,42 +3,51 @@ import React from 'react';
 
 
 const Dashboard = () => {
-    
-  let [skills, setSkills] = React.useState([]); 
+  let [demandedSkills, setDemandedSkills] = React.useState([]);
+  let [skills, setSkills] = React.useState([]);
   React.useEffect(() => {
-  
-    const gettingData = async () =>{
-     try{
+    const gettingDataOffert = async () => {
+      try {
         const data = await db.collection('oferta').get()
         const dataArray = data.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-        console.log(dataArray);
+        const Skills = dataArray.map((e)=>e.Skills).toString()
+        //console.log(Skills)
+        //console.log(dataArray);
         setSkills(dataArray);
-     }catch(err){
+      } catch (err) {
         console.log(err)
-     }
-      
-    } 
-    gettingData();
-      
-  }, []);     
-  
-      return(
-          <>
-              <div> 
-                <h1> Dashboard! </h1>
-                <ul>
-                  {skills.map(item =>(
-                    <li className="list-group-item" key = {item.id}> {item.Skills} </li>
-                  ))
-                  }
-                </ul>
-              </div>
-              
-              
-          </>
-      )
-  }
-  
+      }
+    }
+    const gettingDataDemmand = async () => {
+      try {
+        const data = await db.collection('demanda').get()
+        const dataArray = data.docs.map((doc) => ({ id: doc.id, ...doc.data().Tecnology }))
+        console.log(dataArray.Tecnology);
+        setDemandedSkills(dataArray);
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    gettingDataOffert();
+    gettingDataDemmand();
+  }, []);
+
+  return (
+    <>
+      <div >
+        <h1> Dashboard! </h1>
+        {/*<ul>
+          {skills.map(item => (
+            <li className="list-group-item" key={item.id}> {item.Skills} </li>
+          ))
+          }
+        </ul>
+        */}
+      </div>
+    </>
+  )
+}
+
 
 export default Dashboard;
 
