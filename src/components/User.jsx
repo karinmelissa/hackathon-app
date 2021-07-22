@@ -2,57 +2,45 @@
 import React from 'react';
 
 
-const SignIn = () => {
+const User = () => {
 
 
   return (
     
     <div className="mt-5">
       <h6 className="text-top mt-9">
-        <p>Informacion sobre ti</p>
-        <p>Completa la siguiente informacion para crear tu perfil.</p>
+        <p>Crea un usuario</p>
+        <p>Completa la siguiente informacion para crear un perfil.</p>
       </h6>
       <hr />
       <div className="row justify-content-center">
         <div className="col-12 col-sm-8 col-md-6 col-xl-4">
         <form>
           <table className="table-user">
-            <label>n°empleado</label>
+            <label>Nombre</label>
               <input
-                type="n°empleado"
                 className="form-control mb-4"
-                placeholder="123456"
+                placeholder="Inserta tu nombre aqui"
                 />
                 <br></br>
-              <label>Cargo o stack:</label>
+              <label>Correo:</label>
               <input
-                type="Cargo o stack:"
-                className="form-control mb-2"
-                placeholder="ej: Full-stack developer"
-                />
-                <br></br>
-              <label>Años de experiancia:</label>
-              <input
-                type="Años de experiancia:"
                 className="form-control mb-2"
                 placeholder="example@correo.com"
                 />
                 <br></br>
-              <label>Skills:</label>
+              <label>Contraseña:</label>
               <input
-                type="Skills:"
-                className="Selecciona tus habilidades"
-                placeholder="ej: Full-stack developer"
-                />
-                <br></br>
-              <label>Otros:</label>
-              <input
-                type="Otros:"
                 className="form-control mb-2"
-                placeholder="ej: hobbies, actividades, etc..."
+                placeholder="**********"
                 />
                 <br></br>
-                
+              <label>Confirmar contraseña:</label>
+              <input
+                className="form-control mb-2"
+                placeholder="**********"
+                />              
+                <br></br>                
               <button 
                 className="btn btn-dark btn-sm btn-block mb-2"
                 onClick="Guardar()">
@@ -67,4 +55,4 @@ const SignIn = () => {
    );
 }
 
-export default SignIn
+export default User

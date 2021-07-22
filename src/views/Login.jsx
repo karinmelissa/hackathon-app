@@ -6,7 +6,6 @@ import { auth } from '../firebaseConfig';
 import logo from '../img/logo.png';
 import ever from '../img/ever.png';
 
-
 const Login = () => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
